@@ -5,13 +5,13 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+/Pixel_Guardian_Chronicles/[Ll]ibrary/
+/Pixel_Guardian_Chronicles/[Tt]emp/
+/Pixel_Guardian_Chronicles/[Oo]bj/
+/Pixel_Guardian_Chronicles/[Bb]uild/
+/Pixel_Guardian_Chronicles/[Bb]uilds/
+/Pixel_Guardian_Chronicles/[Ll]ogs/
+/Pixel_Guardian_Chronicles/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
