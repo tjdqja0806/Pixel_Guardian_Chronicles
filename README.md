@@ -1,1 +1,2 @@
-# Pexel_Guardian_Chronicles
+# Hero_Survivor
+Hero_Survivor(가제)
