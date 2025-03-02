@@ -94,21 +94,4 @@ public static class Util
     {
         return (T)Enum.Parse(typeof(T), value, true);
     }
-
-    public static SkillType GetSkillTypeFromInt(int value)
-    {
-        foreach (SkillType skillType in Enum.GetValues(typeof(SkillType)))
-        {
-            int minValue = (int)skillType;
-            int maxValue = minValue + 5; // 100501~ 100506 사이 값이면 100501값 리턴
-
-            if (value >= minValue && value <= maxValue)
-            {
-                return skillType;
-            }
-        }
-
-        Debug.LogError($" Faild add skill : {value}");
-        return SkillType.None;
-    }
 }

@@ -9,7 +9,9 @@ public class Managers : MonoBehaviour
     static Managers Instance { get { Init(); return s_instance; } } // 유일한 매니저를 갖고온다
 
     #region Contents
+    InputManager _input;
 
+    public static InputManager Input { get { return Instance._input; } }
     #endregion
 
     #region Core
@@ -50,6 +52,8 @@ public class Managers : MonoBehaviour
 
     public static void Clear()
     {
+        Input.Clear();
+
         Sound.Clear();
         Scene.Clear();
         UI.Clear();
