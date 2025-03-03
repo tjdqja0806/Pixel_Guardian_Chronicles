@@ -11,7 +11,7 @@ public abstract class CharacterController : BaseController, IStat
     public float Speed { get; set; }
     public int DEF { get; set; }
     public float AttackPower { get; set; }
-    public float AttackSpeec { get; set; }
+    public float AttackSpeed { get; set; }
     public float DodgeProb { get; set; }
     public float CriticalProb { get; set; }
 

@@ -9,9 +9,11 @@ public class Managers : MonoBehaviour
     static Managers Instance { get { Init(); return s_instance; } } // 유일한 매니저를 갖고온다
 
     #region Contents
-    InputManager _input;
+    InputManager _input = new InputManager();
+    GameManager _game = new GameManager();
 
     public static InputManager Input { get { return Instance._input; } }
+    public static GameManager Game { get { return Instance._game; } }
     #endregion
 
     #region Core
@@ -46,7 +48,7 @@ public class Managers : MonoBehaviour
             DontDestroyOnLoad(go);
             s_instance = go.GetComponent<Managers>();
             s_instance._sound.Init();
-
+            s_instance._input.Init();
         }		
 	}
 
@@ -60,5 +62,32 @@ public class Managers : MonoBehaviour
         Pool.Clear();
     }
 
+    private void Update()
+    {
+        if( Instance == null)
+        {
+            return;
+        }
 
+
+        InputManagerUpdate();
+    }
+
+    private void InputManagerUpdate()
+    {
+        if (!Game.IsInGame)
+        {
+            return;
+        }
+
+        if (Input == null)
+        {
+            return;
+        }
+
+        if (UnityEngine.Input.anyKey)
+        {
+            Input.DoKeyAction();
+        }
+    }
 }

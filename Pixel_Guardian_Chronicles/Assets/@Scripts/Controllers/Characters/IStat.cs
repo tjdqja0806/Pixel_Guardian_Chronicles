@@ -21,7 +21,7 @@ public interface IStat
     public float AttackPower { get; set; }
 
     //캐릭터 공격속도
-    public float AttackSpeec { get; set; }
+    public float AttackSpeed { get; set; }
 
     //공격 회피 확률
     public float DodgeProb { get; set; }
