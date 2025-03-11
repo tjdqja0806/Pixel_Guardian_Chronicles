@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Define;
 
-public class PlayerController : CharacterController
+public class PlayerController : CreatureController
 {
     #region Fields
     #endregion

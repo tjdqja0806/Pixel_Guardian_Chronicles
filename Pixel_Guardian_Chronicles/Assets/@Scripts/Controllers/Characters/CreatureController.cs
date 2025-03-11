@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Define;
 
-public abstract class CharacterController : BaseController, IStat
+public abstract class CreatureController : BaseController, IStat
 {
     #region Properties
     public int HP { get; set; }
@@ -23,7 +23,7 @@ public abstract class CharacterController : BaseController, IStat
     {
         if (base.Init() == false)
         {
-            Debug.Log($"{nameof(CharacterController)} / {nameof(Init)} Fail");
+            Debug.Log($"{nameof(CreatureController)} / {nameof(Init)} Fail");
             return false;
         }
 
