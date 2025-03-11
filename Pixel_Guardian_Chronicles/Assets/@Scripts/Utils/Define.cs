@@ -79,6 +79,12 @@ public class Define
     #endregion
    
     #region Enum
+    public enum SkillType
+    {
+        Passive,
+        Active,
+    }
+
     public enum DropItemType
     {
         Potion,

@@ -29,4 +29,15 @@ namespace Data
     //}
     #endregion
 
+    #region SkillData
+    [Serializable]
+    public class SkillData
+    {
+        public int DataId;
+        public string Name;
+        public string Description;
+        public string PrefabPath;
+        public int CoolTime;//ms
+    }
+    #endregion
 }
