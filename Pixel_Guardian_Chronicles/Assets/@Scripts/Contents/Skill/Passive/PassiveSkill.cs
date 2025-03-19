@@ -13,7 +13,7 @@ public abstract class PassiveSkill : SkillBase
     #endregion
 
     #region Method
-    private void Start()
+    private void Awake()
     {
         _skillTimer = new Timer(UsePassiveSkill);
 
