@@ -10,6 +10,7 @@ public class PlayerController : CreatureController
     #endregion
 
     #region Properties
+    public GameManager Game { get; private set; }
     #endregion
 
     #region Methods
@@ -22,6 +23,8 @@ public class PlayerController : CreatureController
         }
 
         ObjectType = ObjectType.Player;
+
+        Game = Managers.Game;
 
         return true;
     }
