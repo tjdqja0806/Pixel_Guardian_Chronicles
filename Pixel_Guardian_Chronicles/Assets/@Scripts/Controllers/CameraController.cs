@@ -30,7 +30,10 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
+        if (_playerTransform == null && Managers.Game.IsInGame)
+            return;
 
+        transform.position = new Vector3(_playerTransform.position.x, _playerTransform.position.y, -10f);
     }
 
     Vector3 camPos;
