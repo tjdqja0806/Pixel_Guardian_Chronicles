@@ -6,6 +6,7 @@ using static Define;
 public class PlayerController : CreatureController
 {
     #region Fields
+    [SerializeField] float moveSpeed = 3f;
     #endregion
 
     #region Properties
@@ -25,6 +26,8 @@ public class PlayerController : CreatureController
         return true;
     }
 
+
+
     public override void CharacterAttack()
     {
 
@@ -42,6 +45,20 @@ public class PlayerController : CreatureController
 
     public override void CharacterMove()
     {
+        //입력값
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+        //방향
+        Vector3 direction = new Vector3(h, v).normalized;
+
+        //움직임
+        transform.position += direction * moveSpeed * Time.deltaTime;
+
+    }
+
+    public void MoveInput()
+    {
 
     }
 
@@ -50,4 +67,9 @@ public class PlayerController : CreatureController
 
     }
     #endregion
+
+    private void Update()
+    {
+        CharacterMove();
+    }
 }
