@@ -7,6 +7,7 @@ public class PlayerController : CreatureController
 {
     #region Fields
     [SerializeField] float moveSpeed = 3f;
+    Rigidbody2D rb;
     #endregion
 
     #region Properties
@@ -53,10 +54,13 @@ public class PlayerController : CreatureController
         float v = Input.GetAxis("Vertical");
 
         //规氢
-        Vector3 direction = new Vector3(h, v).normalized;
+        Vector2 direction = new Vector3(h, v).normalized;
 
         //框流烙
-        transform.position += direction * moveSpeed * Time.deltaTime;
+        rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+
+        // 包己 皑家
+        rb.velocity *= 0.8f;  
 
     }
 
@@ -71,7 +75,12 @@ public class PlayerController : CreatureController
     }
     #endregion
 
-    private void Update()
+    private void Awake()
+    {
+        rb= GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
     {
         CharacterMove();
     }
